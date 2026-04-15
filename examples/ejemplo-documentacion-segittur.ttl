@@ -1,0 +1,41 @@
+@prefix estur-priceclass: <https://ontologia.segittur.es/turismo/kos/priceclass/> .
+@prefix estur-accommodationservice: <https://ontologia.segittur.es/turismo/kos/accommodationservice/> .
+@prefix estur-accommodationratetype: <https://ontologia.segittur.es/turismo/kos/accomodationratetype/> .
+@prefix ex: <https://ontologia.segittur.es/example/>.
+@prefix estur: <https://ontologia.segittur.es/turismo/def/core#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+ex:Hotel1 a estur:Hotel ;
+  rdfs:label "Hotel 1" ;
+  estur:numberOfBeds "258"^^xsd:int ;
+  estur:numberOfAccommodationUnits "98"^^xsd:int ;
+  estur:checkinHours "15:00" ;
+  estur:checkoutHours "12:00" ;
+  estur:autonomousCheckIn "true"^^xsd:boolean ;
+  estur:accommodationRating ex:Hotel1Stars ;
+  estur:hasPriceClass estur-priceclass:MidRange ;
+  estur:offersAdditionalAccommodationService estur-accommodationservice:Restaurant ;
+  estur:offersAdditionalAccommodationService estur-accommodationservice:Pool ;
+  estur:offersAccommodationRateType estur-accommodationratetype:Accommodation ;
+  estur:offersAccommodationRateType estur-accommodationratetype:Breakfast ;
+  estur:offersAccommodationRateType estur-accommodationratetype:HalfBoard ;
+  estur:offersAccommodationRateType estur-accommodationratetype:FullBoard ;  
+  estur:hasLocation ex:Hotel11Location ;
+  estur:hasBookingChannel ex:Hotel1Web. 
+
+ex:Hotel1Stars a estur:Rating ;
+  estur:ratingValue "stars" ;
+  estur:ratingUnit "3".
+    
+estur:Hotel11Location a estur:Location ;
+  rdfs:label "Localización del hotel 1" ;
+  estur:streetAddress "C/ Ejemplo, 2" ;
+  estur:city "Mérida" ;
+  estur:autonomousCommunity "Extremadura" ;
+  estur:country "España".
+
+ex:Hotel1Web a estur:BookingChannel ;
+  rdfs:label "Canales de contratación del hotel 1" ;
+  estur:url "https://example.org/Hotel1/compra" ;
+  estur:url "https://example.org/CentralReservas1/".

@@ -1,0 +1,65 @@
+Clases y propiedades de SEGITTUR para ejemplo Turismo
+1. Para csv de alojamientos turisticos
+Clase: AccomodationEstablishment
+	Los tipos de alojamiento son subclases:
+	Hotel
+	Hostal
+	Hostel
+	Aparthotel
+	Vacation Rentals
+Propiedades
+accomodationRating (object property) entre AccomodationEstablishment y Rating
+numberOfAccomodationUnits (data property) xsd:int
+numberOfBeds (data property) xsd:int
+registrationNumber es identificador(data property) string
+hasDescription: (object property) entre TourismEntity (superclase) y Description
+name (data property) xsd:string
+hasLocation (object property) entre Place (superclase) y Location 
+hasContactPoint (object property) entre Place (superclase) y ContactPoint
+
+Clase:ContactPoint
+email (data property) xsd:string
+telephone (data property) xsd:string
+url (data property) xsd:string
+
+
+Clase:Rating
+Propiedades
+retingUnit (data property) xsd:string. por ejemplo "stars"
+ratingValue (data property) xsd:string. por ejemplo "3"
+
+Clase: Description
+Propiedades
+longDescription (data property) xsd:string
+shortDescription (data property) xsd:string
+
+Location
+Propiedades
+autonomousCommunity (data property) xsd:string
+country (data property) xsd:string
+county (data property) xsd:string (comarca)
+province (data property) xsd:string
+locality (data property) xsd:string
+postal code (data property) xsd:string
+street address (data property) xsd:string 
+gsp:lat y gsp:long (subclase de gsp:Feature)
+
+2. para csv de lugares de interés turístico
+Clase: HistoricalOrCulturalResource
+Los tipos de alojamiento son subclases:
+	Alcazar
+	Amphiteatre
+	Acueduct
+	....
+
+Propiedades
+name (data property) xsd:string
+hasLocation (object property) entre Place (superclase) y Location 
+hasDescription: (object property) entre TourismEntity (superclase) y Description
+
+
+
+
+
+
+
