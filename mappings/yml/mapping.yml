@@ -1,0 +1,186 @@
+prefixes:
+  segittur: "https://ontologia.segittur.es/turismo/def/core#"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+  gsp: "http://www.opengis.net/ont/geosparql#"
+  ex: "http://example.org/turismo/"
+
+mappings:
+  hotel_mapping:
+    sources:
+      - ['dataset.csv~csv']
+    condition:
+      function: equal
+      parameters:
+        - [str1, $(tipo_original)]
+        - [str2, "Hotel"]
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/alojamiento/hotel/$(id_origen)
+    po:
+      - [a, segittur:Hotel]
+      - [segittur:registrationNumber, $(num_registro), xsd:string]
+      - [segittur:name, $(nombre), xsd:string]
+      - [segittur:numberOfAccomodationUnits, $(unidades_alojamiento), xsd:int]
+      - [segittur:numberOfBeds, $(plazas_camas), xsd:int]
+      - [segittur:accomodationRating, "http://vocab.linkeddata.es/datosabiertos/recurso/Rating_$(id_origen)~iri"]
+      - [segittur:hasDescription,"http://vocab.linkeddata.es/datosabiertos/recurso/Desc_$(id_origen)~iri"]
+      - [segittur:hasContactPoint, "http://vocab.linkeddata.es/datosabiertos/recurso/Contact_$(id_origen)~iri"]
+      - [segittur:hasLocation, "http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_$(id_origen)~iri"]
+
+  hostal_mapping:
+    sources:
+      - ['dataset.csv~csv']
+    condition:
+      function: equal
+      parameters:
+        - [str1, $(tipo_original)]
+        - [str2, "Hostal"]
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/alojamiento/hostal/$(id_origen)
+    po:
+      - [a, segittur:Hostal]
+      - [segittur:registrationNumber, $(num_registro), xsd:string]
+      - [segittur:name, $(nombre), xsd:string]
+      - [segittur:numberOfAccomodationUnits, $(unidades_alojamiento), xsd:int]
+      - [segittur:numberOfBeds, $(plazas_camas), xsd:int]
+      - [segittur:accomodationRating, "http://vocab.linkeddata.es/datosabiertos/recurso/Rating_$(id_origen)~iri"]
+      - [segittur:hasDescription,"http://vocab.linkeddata.es/datosabiertos/recurso/Desc_$(id_origen)~iri"]
+      - [segittur:hasContactPoint, "http://vocab.linkeddata.es/datosabiertos/recurso/Contact_$(id_origen)~iri"]
+      - [segittur:hasLocation, "http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_$(id_origen)~iri"]
+
+  aparthotel_mapping:
+    sources:
+      - ['dataset.csv~csv']
+    condition:
+      function: equal
+      parameters:
+        - [ str1, $(tipo_original) ]
+        - [ str2, "Aparthotel" ]
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/alojamiento/aparthotel/$(id_origen)
+    po:
+      - [a, segittur:Aparthotel]
+      - [segittur:registrationNumber, $(num_registro), xsd:string]
+      - [segittur:name, $(nombre), xsd:string]
+      - [segittur:numberOfAccomodationUnits, $(unidades_alojamiento), xsd:int]
+      - [segittur:numberOfBeds, $(plazas_camas), xsd:int]
+      - [segittur:accomodationRating, http://vocab.linkeddata.es/datosabiertos/recurso/Rating_$(id_origen)~iri]
+      - [segittur:hasDescription, http://vocab.linkeddata.es/datosabiertos/recurso/Desc_$(id_origen)~iri]
+      - [segittur:hasContactPoint, http://vocab.linkeddata.es/datosabiertos/recurso/Contact_$(id_origen)~iri]
+      - [segittur:hasLocation, http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_$(id_origen)~iri]
+
+  zona_arqueologica_mapping:
+    sources:
+      - ['dataset.csv~csv']
+    condition:
+      function: equal
+      parameters:
+        - [str1, $(tipo_original)]
+        - [str2, "ZONA ARQUEOLÓGICA"]
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/cultural/$(id_origen)
+    po:
+      - [a, segittur:HistoricalOrCulturalResource]
+      - [segittur:name, $(nombre), xsd:string]
+      - [segittur:hasDescription, "http://vocab.linkeddata.es/datosabiertos/recurso/Desc_$(id_origen)~iri"]
+      - [segittur:hasLocation, "http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_$(id_origen)~iri"]
+
+
+  lugar_interes_mapping:
+    sources:
+      - ['dataset.csv~csv']
+    condition:
+      function: equal
+      parameters:
+        - [str1, $(tipo_original)]
+        - [str2, "Lugar de Interés"]
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/cultural/$(id_origen)
+    po:
+      - [a, segittur:HistoricalOrCulturalResource]
+      - [segittur:name, $(nombre), xsd:string]
+      - [segittur:hasDescription, "http://vocab.linkeddata.es/datosabiertos/recurso/Desc_$(id_origen)~iri"]
+      - [segittur:hasLocation, "http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_$(id_origen)~iri"]
+
+  alcazar_mapping:
+      sources:
+        - ['dataset.csv~csv']
+      condition:
+        function: equal
+        parameters:
+          - [ str1, $(tipo_original) ]
+          - [ str2, "Alcazar" ]
+      s: http://vocab.linkeddata.es/datosabiertos/recurso/cultural/alcazar/$(id_origen)
+      po:
+        - [a, segittur:Alcazar]
+        - [segittur:name, $(nombre), xsd:string]
+        - [segittur:hasDescription, http://vocab.linkeddata.es/datosabiertos/recurso/Desc_$(id_origen)~iri]
+        - [segittur:hasLocation, http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_$(id_origen)~iri]
+
+  amphiteatre_mapping:
+      sources:
+        - ['dataset.csv~csv']
+      condition:
+        function: equal
+        parameters:
+          - [ str1, $(tipo_original) ]
+          - [ str2, "Amphiteatre" ]
+      s: http://vocab.linkeddata.es/datosabiertos/recurso/cultural/alcazar/$(id_origen)
+      po:
+        - [a, segittur:Amphiteatre]
+        - [segittur:name, $(nombre), xsd:string]
+        - [segittur:hasDescription, http://vocab.linkeddata.es/datosabiertos/recurso/Desc_$(id_origen)~iri]
+        - [segittur:hasLocation, http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_$(id_origen)~iri]
+
+  acueduct_mapping:
+      sources:
+        - ['dataset.csv~csv']
+      condition:
+        function: equal
+        parameters:
+          - [ str1, $(tipo_original) ]
+          - [ str2, "Acueduct" ]
+      s: http://vocab.linkeddata.es/datosabiertos/recurso/cultural/alcazar/$(id_origen)
+      po:
+        - [a, segittur:Acueduct]
+        - [segittur:name, $(nombre), xsd:string]
+        - [segittur:hasDescription, http://vocab.linkeddata.es/datosabiertos/recurso/Desc_$(id_origen)~iri]
+        - [segittur:hasLocation, http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_$(id_origen)~iri]
+
+  rating_mapping:
+    sources:
+      - ['dataset.csv~csv']
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/Rating_$(id_origen)
+    po:
+      - [a, segittur:Rating]
+      - [segittur:ratingUnit, "stars", xsd:string]
+      - [segittur:ratingValue, $(categoria_original), xsd:string]
+
+  description_mapping:
+    sources:
+      - ['dataset.csv~csv']
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/Desc_$(id_origen)
+    po:
+      - [a, segittur:Description]
+      - [segittur:longDescription, $(descripcion_larga), xsd:string]
+      - [segittur:shortDescription, $(descripcion_corta), xsd:string]
+
+  contact_mapping:
+    sources:
+      - ['dataset.csv~csv']
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/Contact_$(id_origen)
+    po:
+      - [a, segittur:ContactPoint]
+      - [segittur:email, $(email), xsd:string]
+      - [segittur:telephone, $(telefono), xsd:string]
+      - [segittur:url, $(web), xsd:string]
+
+  location_mapping:
+    sources:
+      - ['dataset.csv~csv']
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_$(id_origen)
+    po:
+      - [a, segittur:Location]
+      - [segittur:country, $(pais), xsd:string]
+      - [segittur:autonomousCommunity, $(comunidad_autonoma), xsd:string]
+      - [segittur:province, $(provincia), xsd:string]
+      - [segittur:county, $(comarca), xsd:string]
+      - [segittur:locality, $(localidad), xsd:string]
+      - [segittur:postalCode, $(codigo_postal), xsd:string]
+      - [segittur:streetAddress, $(direccion), xsd:string]
+      - [gsp:lat, $(latitud), xsd:string]
+      - [gsp:long, $(longitud), xsd:string]
