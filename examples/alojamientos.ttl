@@ -1,0 +1,158 @@
+@prefix ex: <http://example.org/turismo/> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix map: <http://mapping.example.com/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix segittur: <https://ontologia.segittur.es/turismo/def/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Contact_aragon-1> a segittur:ContactPoint;
+  segittur:email "administracion@gestoriapellice.es";
+  segittur:telephone "976643331";
+  segittur:url "www.encantotarazona.com" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Contact_cyl-0> a segittur:ContactPoint;
+  segittur:email "info@elrastroavila.com";
+  segittur:telephone "920211218";
+  segittur:url "www.elrastroavila.com" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Contact_cyl-2> a segittur:ContactPoint;
+  segittur:email "contacto@apartamentosturisticosdesoria.es";
+  segittur:telephone "975228566";
+  segittur:url "www.apartamentosturisticosdesoria.es" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Contact_gijon-0> a segittur:ContactPoint;
+  segittur:email "info@livhome.es";
+  segittur:telephone "648951105";
+  segittur:url "https://livhome.es/" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Contact_gijon-2> a segittur:ContactPoint;
+  segittur:email "info@alberguecovadonga.com";
+  segittur:telephone "985319031";
+  segittur:url "www.alberguecovadonga.com" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Desc_aragon-1> a segittur:Description;
+  segittur:shortDescription "Hotel boutique en el centro." .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Desc_cyl-0> a segittur:Description;
+  segittur:shortDescription "Acogedor hostal junto a la muralla." .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Desc_cyl-2> a segittur:Description;
+  segittur:shortDescription "Apartamentos céntricos." .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Desc_gijon-0> a segittur:Description;
+  segittur:longDescription "Esta Casa de Aldea se encuentra a tan solo 5 minutos de Gijón en un entorno tranquilo ideal para desconectar de la ciudad.";
+  segittur:shortDescription "Casa de Aldea a 5 minutos de Gijón." .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Desc_gijon-2> a segittur:Description;
+  segittur:shortDescription "Albergue turístico en Gijón." .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Rating_aragon-1> a segittur:Rating;
+  segittur:ratingUnit "stars";
+  segittur:ratingValue "3" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Rating_cyl-0> a segittur:Rating;
+  segittur:ratingUnit "stars";
+  segittur:ratingValue "2" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Rating_cyl-2> a segittur:Rating;
+  segittur:ratingUnit "stars";
+  segittur:ratingValue "3" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Rating_gijon-0> a segittur:Rating;
+  segittur:ratingUnit "stars";
+  segittur:ratingValue "3" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/Rating_gijon-2> a segittur:Rating;
+  segittur:ratingUnit "stars";
+  segittur:ratingValue "1" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/alojamiento/aparthotel/cyl-2> a
+    segittur:Aparthotel;
+  segittur:accomodationRating <http://vocab.linkeddata.es/datosabiertos/recurso/Rating_cyl-2>;
+  segittur:hasContactPoint <http://vocab.linkeddata.es/datosabiertos/recurso/Contact_cyl-2>;
+  segittur:hasDescription <http://vocab.linkeddata.es/datosabiertos/recurso/Desc_cyl-2>;
+  segittur:hasLocation <http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_cyl-2>;
+  segittur:name "APARTAMENTOS TURISTICOS DE SORIA";
+  segittur:numberOfAccomodationUnits "12"^^xsd:int;
+  segittur:numberOfBeds "24"^^xsd:int;
+  segittur:registrationNumber "42/000017" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/alojamiento/hostal/cyl-0> a segittur:Hostal;
+  segittur:accomodationRating <http://vocab.linkeddata.es/datosabiertos/recurso/Rating_cyl-0>;
+  segittur:hasContactPoint <http://vocab.linkeddata.es/datosabiertos/recurso/Contact_cyl-0>;
+  segittur:hasDescription <http://vocab.linkeddata.es/datosabiertos/recurso/Desc_cyl-0>;
+  segittur:hasLocation <http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_cyl-0>;
+  segittur:name "EL RASTRO";
+  segittur:numberOfAccomodationUnits "8"^^xsd:int;
+  segittur:numberOfBeds "16"^^xsd:int;
+  segittur:registrationNumber "05/000003" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/alojamiento/hotel/aragon-1> a segittur:Hotel;
+  segittur:accomodationRating <http://vocab.linkeddata.es/datosabiertos/recurso/Rating_aragon-1>;
+  segittur:hasContactPoint <http://vocab.linkeddata.es/datosabiertos/recurso/Contact_aragon-1>;
+  segittur:hasDescription <http://vocab.linkeddata.es/datosabiertos/recurso/Desc_aragon-1>;
+  segittur:hasLocation <http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_aragon-1>;
+  segittur:name "ENCANTO TARAZONA";
+  segittur:numberOfAccomodationUnits "16"^^xsd:int;
+  segittur:numberOfBeds "26"^^xsd:int;
+  segittur:registrationNumber "H-ZARAGOZA-21-006" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_aragon-1> a segittur:Location;
+  gsp:lat "41.9031";
+  gsp:long "-1.7268";
+  segittur:autonomousCommunity "Aragón";
+  segittur:country "España";
+  segittur:county "Tarazona y el Moncayo";
+  segittur:locality "TARAZONA";
+  segittur:postalCode "50500";
+  segittur:province "Zaragoza";
+  segittur:streetAddress "PLAZA ESPAÑA, 9 BIS" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_cyl-0> a segittur:Location;
+  gsp:lat "40.654666";
+  gsp:long "-4.70118";
+  segittur:autonomousCommunity "Castilla y León";
+  segittur:country "España";
+  segittur:county "Valle de Amblés";
+  segittur:locality "AVILA";
+  segittur:postalCode "5001";
+  segittur:province "Ávila";
+  segittur:streetAddress "Plaza PLAZA DEL RASTRO, 1" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_cyl-2> a segittur:Location;
+  gsp:lat "41.764166";
+  gsp:long "-2.466388";
+  segittur:autonomousCommunity "Castilla y León";
+  segittur:country "España";
+  segittur:county "Soria";
+  segittur:locality "SORIA";
+  segittur:postalCode "42001";
+  segittur:province "Soria";
+  segittur:streetAddress "Calle NUMANCIA 41" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_gijon-0> a segittur:Location;
+  gsp:lat "43.5112";
+  gsp:long "-5.6321";
+  segittur:autonomousCommunity "Asturias";
+  segittur:country "España";
+  segittur:county "Gijón";
+  segittur:locality "Gijón";
+  segittur:postalCode "33390";
+  segittur:province "Asturias";
+  segittur:streetAddress "Camino del Reganorio, 40" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_gijon-2> a segittur:Location;
+  gsp:lat "43.538812";
+  gsp:long "-5.674062";
+  segittur:autonomousCommunity "Asturias";
+  segittur:country "España";
+  segittur:county "Gijón";
+  segittur:locality "Gijón";
+  segittur:postalCode "33207";
+  segittur:province "Asturias";
+  segittur:streetAddress "C/Diario el Comercio, s/n" .
