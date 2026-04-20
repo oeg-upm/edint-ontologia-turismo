@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapping Documentation (mapping.ttl). Version 1.0.0</title>
+    <title>Mappings RML para transformar datos turísticos a RDF (Ontología de Turismo). Version 1.0.0</title>
 
     <!--<link rel="stylesheet" href="../css/styles.css">-->
     <style>
@@ -394,13 +394,15 @@
     {
       "@context":"https://schema.org",
       "@type":"TechArticle",
-      "name":"Mapping Documentation (mapping.ttl). Version 1.0.0",
-      "headline":"",
-      "dateReleased":"",
-      "dateModified":"",
+      "name":"Mappings RML para transformar datos turísticos a RDF (Ontología de Turismo). Version 1.0.0",
+      "headline":"Este conjunto de mappings RML transforma datos del dominio turístico a RDF, utilizando una ontología de turismo. El objetivo es generar un grafo RDF interoperable para representar las entidades principales del sector turístico, como destinos, alojamientos, actividades, recursos turísticos y servicios asociados, orientado a su reutilización e integración en sistemas semánticos.",
+      "dateReleased":"20-04-2026",
+      "dateModified":"20-04-2026",
       "version":"v1.0.0",
       "license":"",
       "author":[
+        
+          {"@type":"Person","name":"Jhon Toledo"}
         
       ]
     }
@@ -451,7 +453,9 @@ var Jo=function(){function e(e){return-e.tension*e.x-e.friction*e.v}function t(t
   <div class="page-wrap">
 
     <div class="head">
-      <h1>Mapping Documentation (mapping.ttl)</h1>
+      <h1>Mappings RML para transformar datos turísticos a RDF (Ontología de Turismo)</h1>
+      
+        <h2>Release: 20-04-2026</h2>
       
 
       <dl>
@@ -459,13 +463,19 @@ var Jo=function(){function e(e){return-e.tension*e.x-e.friction*e.v}function t(t
 
         <dt>Authors:</dt>
         
-          <dd>(no contributors specified)</dd>
+          
+            <dd>
+              
+                <a href="mailto:ja.toledo@upm.es">Jhon Toledo</a>
+              
+            </dd>
+          
         
 
         <!--<dt>Mapping file:</dt>
         <dd><a href="mapping.ttl" target="_blank">mapping.ttl</a></dd>-->
 
-        <dt>Description:</dt><dd></dd>
+        <dt>Description:</dt><dd>Este conjunto de mappings RML transforma datos del dominio turístico a RDF, utilizando una ontología de turismo. El objetivo es generar un grafo RDF interoperable para representar las entidades principales del sector turístico, como destinos, alojamientos, actividades, recursos turísticos y servicios asociados, orientado a su reutilización e integración en sistemas semánticos.</dd>
 
         
 
@@ -529,7 +539,7 @@ var Jo=function(){function e(e){return-e.tension*e.x-e.friction*e.v}function t(t
 
         <!--<div id="abstract" class="section-card">
           <h2 id="abstract-sec" class="list">Abstract</h2>
-          <p></p>
+          <p>Este conjunto de mappings RML transforma datos del dominio turístico a RDF, utilizando una ontología de turismo. El objetivo es generar un grafo RDF interoperable para representar las entidades principales del sector turístico, como destinos, alojamientos, actividades, recursos turísticos y servicios asociados, orientado a su reutilización e integración en sistemas semánticos.</p>
 
         </div>-->
 
@@ -562,6 +572,10 @@ var Jo=function(){function e(e){return-e.tension*e.x-e.friction*e.v}function t(t
               <tr><td><code>fnml</code></td><td><a href="http://semweb.mmlab.be/ns/fnml#">http://semweb.mmlab.be/ns/fnml#</a></td></tr>
             
               <tr><td><code>grel</code></td><td><a href="http://users.ugent.be/~bjdmeest/function/grel.ttl#">http://users.ugent.be/~bjdmeest/function/grel.ttl#</a></td></tr>
+            
+              <tr><td><code>map</code></td><td><a href="http://mapping.example.com/">http://mapping.example.com/</a></td></tr>
+            
+              <tr><td><code>dct</code></td><td><a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a></td></tr>
             
             </tbody>
           </table>
