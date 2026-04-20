@@ -1,0 +1,913 @@
+@prefix segittur: <https://ontologia.segittur.es/turismo/def/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix gsp: <http://www.opengis.net/ont/geosparql#>.
+@prefix ex: <http://example.org/turismo/>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix schema: <http://schema.org/>.
+@prefix formats: <http://www.w3.org/ns/formats/>.
+@prefix comp: <http://semweb.mmlab.be/ns/rml-compression#>.
+@prefix void: <http://rdfs.org/ns/void#>.
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#>.
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#>.
+@base <http://example.com/ns#>.
+
+
+<hotel_mapping_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "dataset.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/alojamiento/hotel/{id_origen}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant segittur:Hotel;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:registrationNumber;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "num_registro";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:name;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "nombre";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:numberOfAccomodationUnits;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "unidades_alojamiento";
+			rr:datatype xsd:int
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:numberOfBeds;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "plazas_camas";
+			rr:datatype xsd:int
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:accomodationRating;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Rating_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasDescription;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Desc_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasContactPoint;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Contact_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasLocation;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_{id_origen}";
+			rr:termType rr:IRI
+		];
+	].
+
+
+<hostal_mapping_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "dataset.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/alojamiento/hostal/{id_origen}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant segittur:Hostal;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:registrationNumber;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "num_registro";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:name;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "nombre";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:numberOfAccomodationUnits;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "unidades_alojamiento";
+			rr:datatype xsd:int
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:numberOfBeds;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "plazas_camas";
+			rr:datatype xsd:int
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:accomodationRating;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Rating_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasDescription;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Desc_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasContactPoint;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Contact_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasLocation;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_{id_origen}";
+			rr:termType rr:IRI
+		];
+	].
+
+
+<aparthotel_mapping_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "dataset.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/alojamiento/aparthotel/{id_origen}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant segittur:Aparthotel;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:registrationNumber;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "num_registro";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:name;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "nombre";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:numberOfAccomodationUnits;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "unidades_alojamiento";
+			rr:datatype xsd:int
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:numberOfBeds;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "plazas_camas";
+			rr:datatype xsd:int
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:accomodationRating;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Rating_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasDescription;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Desc_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasContactPoint;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Contact_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasLocation;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_{id_origen}";
+			rr:termType rr:IRI
+		];
+	].
+
+
+<zona_arqueologica_mapping_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "dataset.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/cultural/{id_origen}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant segittur:HistoricalOrCulturalResource;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:name;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "nombre";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasDescription;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Desc_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasLocation;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_{id_origen}";
+			rr:termType rr:IRI
+		];
+	].
+
+
+<lugar_interes_mapping_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "dataset.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/cultural/{id_origen}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant segittur:HistoricalOrCulturalResource;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:name;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "nombre";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasDescription;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Desc_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasLocation;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_{id_origen}";
+			rr:termType rr:IRI
+		];
+	].
+
+
+<alcazar_mapping_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "dataset.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/cultural/alcazar/{id_origen}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant segittur:Alcazar;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:name;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "nombre";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasDescription;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Desc_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasLocation;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_{id_origen}";
+			rr:termType rr:IRI
+		];
+	].
+
+
+<amphiteatre_mapping_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "dataset.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/cultural/alcazar/{id_origen}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant segittur:Amphiteatre;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:name;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "nombre";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasDescription;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Desc_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasLocation;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_{id_origen}";
+			rr:termType rr:IRI
+		];
+	].
+
+
+<acueduct_mapping_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "dataset.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/cultural/alcazar/{id_origen}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant segittur:Acueduct;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:name;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "nombre";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasDescription;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Desc_{id_origen}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:hasLocation;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_{id_origen}";
+			rr:termType rr:IRI
+		];
+	].
+
+
+<rating_mapping_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "dataset.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Rating_{id_origen}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant segittur:Rating;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:ratingUnit;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant "stars";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:ratingValue;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "categoria_original";
+			rr:datatype xsd:string
+		];
+	].
+
+
+<description_mapping_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "dataset.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Desc_{id_origen}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant segittur:Description;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:longDescription;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "descripcion_larga";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:shortDescription;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "descripcion_corta";
+			rr:datatype xsd:string
+		];
+	].
+
+
+<contact_mapping_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "dataset.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/Contact_{id_origen}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant segittur:ContactPoint;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:email;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "email";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:telephone;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "telefono";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:url;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "web";
+			rr:datatype xsd:string
+		];
+	].
+
+
+<location_mapping_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "dataset.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/location/Location_{id_origen}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant segittur:Location;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:country;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "pais";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:autonomousCommunity;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "comunidad_autonoma";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:province;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "provincia";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:county;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "comarca";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:locality;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "localidad";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:postalCode;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "codigo_postal";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant segittur:streetAddress;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "direccion";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant gsp:lat;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "latitud";
+			rr:datatype xsd:string
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant gsp:long;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "longitud";
+			rr:datatype xsd:string
+		];
+	].
+
+
